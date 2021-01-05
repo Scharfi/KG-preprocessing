@@ -1,0 +1,46 @@
+2020-10-01 01:36:08,001 - Conex - INFO - Info pertaining to dataset:KGs/Lidl/
+2020-10-01 01:36:08,002 - Conex - INFO - Number of triples in training data:122609
+2020-10-01 01:36:08,002 - Conex - INFO - Number of triples in validation data:2788
+2020-10-01 01:36:08,002 - Conex - INFO - Number of triples in testing data:2788
+2020-10-01 01:36:08,002 - Conex - INFO - Number of entities:17311
+2020-10-01 01:36:08,002 - Conex - INFO - Number of relations:4
+2020-10-01 01:36:08,002 - Conex - INFO - HyperParameter Settings:{'embedding_dim': 20, 'learning_rate': 0.0005, 'batch_size': 128, 'conv_out': 64, 'input_dropout': 0.1, 'hidden_dropout': 0.1, 'projection_size': 1088, 'feature_map_dropout': 0.1, 'label_smoothing': 0.1, 'decay_rate': 1.0, 'num_entities': 17311, 'num_relations': 4, 'dataset': 'KGs/Lidl/', 'dataset_augmentation': False}
+2020-10-01 01:36:08,012 - Conex - INFO - ConEx(
+  (inp_drop): Dropout(p=0.1, inplace=False)
+  (hidden_drop): Dropout(p=0.1, inplace=False)
+  (feature_map_drop): Dropout2d(p=0.1, inplace=False)
+  (conv1): Conv2d(1, 64, kernel_size=(4, 4), stride=(1, 1))
+  (bn0): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3_1): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3_2): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3_3): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3_4): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (fc): Linear(in_features=1088, out_features=20, bias=True)
+  (emb_e_real): Embedding(17311, 20, padding_idx=0)
+  (emb_e_img): Embedding(17311, 20, padding_idx=0)
+  (emb_rel_real): Embedding(4, 20, padding_idx=0)
+  (emb_rel_img): Embedding(4, 20, padding_idx=0)
+  (loss): BCELoss()
+)
+2020-10-01 01:36:08,093 - Conex - INFO - Conex starts training
+2020-10-01 01:36:08,093 - Conex - INFO - 'Number of free parameters: 715838
+2020-10-01 07:49:57,111 - Conex - INFO - Iteration:500 with Average loss0.0009077987098466093
+2020-10-01 07:49:57,111 - Conex - INFO - Validation:
+2020-10-01 07:50:02,060 - Conex - INFO - Hits @10: 0.7611190817790531
+2020-10-01 07:50:02,060 - Conex - INFO - Hits @3: 0.6649928263988523
+2020-10-01 07:50:02,061 - Conex - INFO - Hits @1: 0.5552367288378766
+2020-10-01 07:50:02,061 - Conex - INFO - Mean reciprocal rank: 0.6277067381058753
+2020-10-01 14:09:43,937 - Conex - INFO - Iteration:1000 with Average loss0.0008949282169739288
+2020-10-01 14:09:43,937 - Conex - INFO - Validation:
+2020-10-01 14:09:48,945 - Conex - INFO - Hits @10: 0.7661406025824964
+2020-10-01 14:09:48,946 - Conex - INFO - Hits @3: 0.671090387374462
+2020-10-01 14:09:48,946 - Conex - INFO - Hits @1: 0.5573888091822095
+2020-10-01 14:09:48,947 - Conex - INFO - Mean reciprocal rank: 0.6309407191837547
+2020-10-01 14:09:48,949 - Conex - INFO - Testing:
+2020-10-01 14:09:53,985 - Conex - INFO - Hits @10: 0.7600430416068866
+2020-10-01 14:09:53,987 - Conex - INFO - Hits @3: 0.6599713055954088
+2020-10-01 14:09:53,987 - Conex - INFO - Hits @1: 0.5534433285509326
+2020-10-01 14:09:53,987 - Conex - INFO - Mean reciprocal rank: 0.6266112353625387
