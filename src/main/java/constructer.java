@@ -18,8 +18,10 @@ public class constructer {
         System.out.println(foo);
 
 
-        // Create a QueryExecution object from a query string: && ?p != <http://dice-researcher.com/grocery-recommendation/customer#list> && ?p != <http://projekt-opal.de/dataset#pagination>
+        // Create a QueryExecution object from a query string to construct a graph
         String queryString = "CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o . FILTER (?p != <http://dice-researcher.com/grocery-recommendation/customer#list> && ?p != <http://dice-researcher.com/grocery-recommendation/recommendation#list && ?p != <http://dice-researcher.com/dataset#pagination>).}";
+
+	// query the graph: select data from the database with filtering certain triples
         //String queryString = "SELECT DISTINCT ?s WHERE { ?s ?p ?o . FILTER(?p!=<http://dice-researcher.com/grocery-recommendation/recommendation#list> && ?p != <http://dice-researcher.com/grocery-recommendation/customer#list> && ?p != <http://projekt-opal.de/dataset#pagination>).}";
 
         //String queryString = "SELECT DISTINCT ?s ?p ?o  WHERE {   \n" +
@@ -37,7 +39,7 @@ public class constructer {
         ResultSetFormatter.outputAsCSV(o, results);
         */
 
-        // Construct graph
+        // Construct the graph (owl, nt, ...)
         Query query = QueryFactory.create(queryString, Syntax.syntaxSPARQL_11);
         QueryExecution q = qef.createQueryExecution(query);
         Model result = q.execConstruct();
